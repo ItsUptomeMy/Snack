@@ -1,0 +1,16 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/details/details",
+    "pages/theme/theme"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "杂货商店",
+    "navigationBarBackgroundColor": "#ab956d",
+    "backgroundColor": "#ffffff"
+  },
+  "usingComponents": {},
+  "sitemapLocation": "sitemap84.json"
+}

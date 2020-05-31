@@ -1,0 +1,1 @@
+<view class="theme_No bg-white"><block wx:for="{{themeList}}" wx:for-item="item" wx:for-index="index" wx:key="index"><block><view data-event-opts="{{[['tap',[['goTo_Theme',['$0'],[[['themeList','',index,'id']]]]]]]}}" class="{{[index==2?'theme_No_02':'theme_No_01']}}" bindtap="__e"><image src="{{item.topic_img.url}}" mode="aspectFill"></image></view></block></block></view>

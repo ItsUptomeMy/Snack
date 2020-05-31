@@ -1,0 +1,1 @@
+<view class="newProductBox"><block wx:for="{{newProductsList}}" wx:for-item="item" wx:for-index="index" wx:key="index"><block><view class="newProduct_NO"><image src="{{item.main_img_url}}" mode="aspectFill"></image><view class="p_name">{{item.name}}</view><view class="p_price">{{"￥"+item.price}}</view></view></block></block></view>

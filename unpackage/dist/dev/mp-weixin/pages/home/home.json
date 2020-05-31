@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "杂货商店",
+  "usingComponents": {
+    "swiper-g": "/pages/home/components/swiper",
+    "theme-g": "/pages/home/components/theme",
+    "new-products-g": "/pages/home/components/newProducts"
+  }
+}

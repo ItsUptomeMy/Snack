@@ -1,0 +1,1 @@
+<view class="container"><swiper-g vue-id="1da55560-1" bind:__l="__l"></swiper-g><view class="tittle">精选主题</view><theme-g vue-id="1da55560-2" bind:__l="__l"></theme-g><view class="tittle">最近新品</view><new-products-g vue-id="1da55560-3" bind:__l="__l"></new-products-g></view>

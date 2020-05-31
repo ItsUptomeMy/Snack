@@ -1,0 +1,1 @@
+<view><view class="top_img"><image src="{{ImgUrl}}" mode="aspectFill"></image></view><theme-g vue-id="072f57ac-1" ThemeID="{{ThemeID}}" data-event-opts="{{[['^top',[['topImgUrl']]]]}}" bind:top="__e" bind:__l="__l"></theme-g></view>

@@ -1,0 +1,22 @@
+{
+	"pages": [{
+		"path": "pages/home/home",
+		"style": {
+			"navigationBarTitleText": "杂货商店"
+		}
+	}, {
+		"path": "pages/details/details",
+		"style": {
+			"navigationBarTitleText": "商品详情"
+		}
+	}, {
+		"path": "pages/theme/theme",
+		"style": {}
+	}],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "杂货商店",
+		"navigationBarBackgroundColor": "#ab956d",
+		"backgroundColor": "#ffffff"
+	}
+}
