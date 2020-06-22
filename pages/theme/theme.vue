@@ -3,30 +3,42 @@
 		<view class="top_img">
 			<image :src="ImgUrl" mode="aspectFill"></image>
 		</view>
-		<themeG :ThemeID="ThemeID" @top="topImgUrl"></themeG>
+		<newProductsG v-if="flog" :newProducts="newProducts"></newProductsG>
 	</view>
 </template>
 
 <script>
-	import themeG from "../home/components/newProducts.vue";
+	import newProductsG from "../home/components/newProducts.vue";
+	import {getThemeProducts} from "../../api/index.js";
+	
 	export default {
 		components:{
-			themeG
+			newProductsG
 		},
 		data() {
 			return {
-				ThemeID:0,
-				ImgUrl:''
+				ImgUrl:'',
+				newProducts:[],
+				flog:false
 			}
 		},
 		onLoad(option) {
-			this.ThemeID=option.id;
-			
+			this._getThemeProducts(option.id);
 		},
 		methods: {
-			topImgUrl(url){
-				this.ImgUrl =url;
-			}
+			_getThemeProducts(id){	//根据主题id查询商品	
+			 	getThemeProducts(id).then(data=>{
+					var [error, res] = data;
+					this.newProducts = res.data.products;
+					this.ImgUrl = res.data.head_img.url
+					uni.setNavigationBarTitle({
+					    title:res.data.description
+					});
+					this.flog = true;
+				})
+			},
+			
+			
 		}
 	}
 </script>

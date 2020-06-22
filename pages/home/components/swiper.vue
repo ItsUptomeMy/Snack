@@ -2,7 +2,7 @@
 	<view>
 		<swiper class="screen-swiper" :indicator-dots="true" :circular="true"
 		 :autoplay="true" interval="5000" duration="500">
-			<swiper-item v-for="(item,index) in swiperList" :key="index" @click="goTo_Details()">
+			<swiper-item v-for="(item,index) in swiperList" :key="index" @click="goTo_Details(item.key_word)">
 				<image :src="item.img.url" mode="aspectFill"></image>
 			</swiper-item>
 		</swiper>
@@ -28,9 +28,9 @@
 			})
 		},
 		methods:{
-			goTo_Details(){
+			goTo_Details(id){
 				uni.navigateTo({
-				    url: '../details/details'
+				    url: '../details/details?id='+id
 				});
 			}
 		}

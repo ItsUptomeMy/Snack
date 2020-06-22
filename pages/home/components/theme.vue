@@ -24,7 +24,7 @@
 			getThemeData().then(data => {
 				var [error, res] = data;
 				this.themeList = res.data;
-				console.log(this.themeList);
+				// console.log(this.themeList);
 			})
 		},
 		methods: {

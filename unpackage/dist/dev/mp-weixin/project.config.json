@@ -1,33 +1,44 @@
 {
-	"description": "项目配置文件。",
-	"packOptions": {
-		"ignore": []
-	},
-	"setting": {
-		"urlCheck": false
-	},
-	"compileType": "miniprogram",
-	"libVersion": "2.9.2",
-	"appid": "touristappid",
-	"projectname": "Snack",
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
-	"condition": {
-		"search": {
-			"current": -1,
-			"list": []
-		},
-		"conversation": {
-			"current": -1,
-			"list": []
-		},
-		"game": {
-			"current": -1,
-			"list": []
-		},
-		"miniprogram": {
-			"current": -1,
-			"list": []
-		}
-	}
+  "description": "项目配置文件。",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.9.2",
+  "appid": "touristappid",
+  "projectname": "Snack",
+  "condition": {
+    "search": {
+      "current": -1,
+      "list": []
+    },
+    "conversation": {
+      "current": -1,
+      "list": []
+    },
+    "game": {
+      "current": -1,
+      "list": []
+    },
+    "miniprogram": {
+      "current": 1,
+      "list": [
+        {
+          "name": "details",
+          "query": "id=11",
+          "id": 0,
+          "pathName": "pages/details/details"
+        },
+        {
+          "name": "category",
+          "query": "",
+          "id": 1,
+          "pathName": "pages/category/category"
+        }
+      ]
+    }
+  }
 }

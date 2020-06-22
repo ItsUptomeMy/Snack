@@ -32,43 +32,27 @@ export const getProductsData = () => (
 
 // 获取主题下的商品列表
 // 对应主题 
-export const getThemeProducts = id => (
-		uni.request({
-		    url: baseUrl+'/theme/'+id, 
-		    header: {
-				'content-type':'json',
-				'token':uni.getStorageSync('token')
-		    }
+export const getThemeProducts =async id => (
+    await  uni.request({
+		    url: baseUrl+'/theme/'+id	
 		})
 )
 //产品id 获取产品信息
 export const getProduct_info = id =>(
 	uni.request({
-	    url: baseUrl+'/product/'+id, 
-	    header: {
-			'content-type':'json',
-			'token':uni.getStorageSync('token')
-	    }
+	    url: baseUrl+'/product/'+id
 	})
 )
 
 //获取所有分类
 export const getCategorys = () =>(
 	uni.request({
-	    url: baseUrl+'/category/all', 
-	    header: {
-			'content-type':'json',
-			'token':uni.getStorageSync('token')
-	    }
+	    url: baseUrl+'/category/all'	    
 	})
 )
 //分类产品
 export const getProductByCategorys = id =>(
 	uni.request({
-	    url: baseUrl+'/product/by_category?id='+id, 
-	    header: {
-			'content-type':'json',
-			'token':uni.getStorageSync('token')
-	    }
+	    url: baseUrl+'/product/by_category?id='+id 	   
 	})
 )

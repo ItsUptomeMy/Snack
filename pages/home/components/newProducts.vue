@@ -1,7 +1,7 @@
 <template>
 	<view class="newProductBox">
 		<block v-for="(item,index) in newProductsList" :key="index">
-			<view class="newProduct_NO">
+			<view class="newProduct_NO" @click="gotoDetails(item.id)">
 				<image :src="item.main_img_url" mode="aspectFill"></image>
 				<view class="p_name">{{item.name}}</view>
 				<view class="p_price">￥{{item.price}}</view>
@@ -11,47 +11,43 @@
 </template>
 
 <script>
-	import {getProductsData,getThemeProducts} from "../../../api/index.js";
+	import {getProductsData} from "../../../api/index.js";
 	export default {
-		props:["ThemeID"],
+		props:["newProducts"],
 		data() {
 			return {
 				newProductsList:[],
 			};
 		},
 		mounted() {
-			//主题id 导航栏文字			
-			
-			if(null != this.ThemeID){ 
-				this._getThemeProducts();
+			//主题id 		
+			if(null != this.newProducts){ 
+				this.newProductsList = this.newProducts;			
 			}else{
 				this._getProductsData();
 			}
-		},
-		methods:{
-			_getThemeProducts(){	//根据主题id查询商品
-				getThemeProducts(this.ThemeID).then(data=>{ 
-					var [error, res] = data;
-					console.log(res.data);
-					this.newProductsList = res.data.products;
-					this.$emit('top',res.data.head_img.url);
-					uni.setNavigationBarTitle({
-					    title: '新的标题'
-					});
-				})
-			},
+		}, 
+		methods:{			
 			_getProductsData(){		//所有新品
 				getProductsData().then(data=>{
 					var [error, res] = data;
-					console.log(res.data);
 					this.newProductsList = res.data;
 				})
+			},
+			gotoDetails(productID){
+				// console.log(productID);
+				uni.navigateTo({
+					url:'../details/details?id='+productID
+				})
+				// uni.navigateTo({
+				//     url: 'test?id=1&name=uniapp'
+				// });
 			}
 			
 		}
 	}
 </script>
-
+ 
 <style lang="scss">
 	.newProductBox{
 		padding: 20rpx;
